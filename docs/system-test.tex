@@ -1,0 +1,352 @@
+\documentclass[12pt, a4paper, dutch]{article}
+\usepackage[margin=1in]{geometry}
+
+\usepackage{float}
+\usepackage{babel}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{csquotes}
+\usepackage{parskip}
+\usepackage{unicode-math}
+\usepackage{fontspec}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{needspace}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{bbding}
+% \usepackage[backend=biber,
+% 	bibencoding=utf8,
+% 	style=apa
+% ]{biblatex}
+
+\setmainfont{TeX Gyre Schola}
+\setmathfont{TeX Gyre Schola Math}
+\sisetup{
+	group-separator = {.},
+	output-decimal-marker = {,}
+}
+
+\bigskipamount=7mm
+\medskipamount=4mm
+\parindent=0mm
+\renewcommand{\arraystretch}{1.4}
+
+\newcommand{\req}[1]{$^{\text{\ref{req:#1}}}$}
+\newcommand{\up}[1]{$^{\text{#1}}$}
+\newcommand{\sub}[1]{$_{\text{#1}}$}
+\newcommand{\cb}{\Square}
+
+\newcommand{\stroom}{De stylofoon is aangesloten op een voeding}
+\newcommand{\audio}{De audiouitgang is aangesloten op een speaker of koptelefoon}
+\newcommand{\aan}{De aan/uit knop staat op AAN}
+\newcommand{\vol}{De volumeknop staat ingesteld op een hoorbaar niveau}
+
+\begin{document}
+System test \hfill \textbf{Loek Le Blansch (2180996)}\\
+Project Stylofoon \hfill \today
+\medskip
+
+\tableofcontents
+
+\newpage
+\section{Tests}
+
+\subsection{Draaiknop analoge/digitale synthesizer mixer}
+
+\begin{minipage}{\textwidth}
+\textbf{Beginsituatie}
+\begin{itemize}
+	\item \stroom
+	\item \audio
+	\item \aan
+	\item \vol
+\end{itemize}
+
+\medskip
+
+\begin{tabularx}{\textwidth}{p{0.5\textwidth}p{0.3\textwidth}>{\raggedleft\arraybackslash}X}
+\toprule
+\textbf{Actie} & \textbf{Resultaat} & \textbf{Check}\\
+\midrule
+Houd de stylus op een van de toetsen &
+Er klinkt geluid &
+\cb\\
+
+Draai de knop die als `mix' gelabeld staat terwijl de stylus nog een van de
+toetsen aan raakt &
+De klank van het geluid veranderd, maar er valt geen stilte &
+\cb\\
+\bottomrule
+\end{tabularx}
+\end{minipage}
+
+\subsection{VU-display}
+
+\begin{minipage}{\textwidth}
+\textbf{Beginsituatie}
+\begin{itemize}
+	\item \stroom
+	\item \aan
+\end{itemize}
+
+\medskip
+
+\begin{tabularx}{\textwidth}{p{0.5\textwidth}p{0.3\textwidth}>{\raggedleft\arraybackslash}X}
+\toprule
+\textbf{Actie} & \textbf{Resultaat} & \textbf{Check}\\
+\midrule
+Houd de stylus op een van de toetsen &
+De VU-meter licht op &
+\cb\\
+
+Draai de knop die als `volume' gelabeld staat terwijl de stylus nog een van de
+toetsen aan raakt &
+Het aantal segmenten die opgelicht zijn verandert afhankelijk van de stand van de
+volumeknop &
+\cb\\
+\bottomrule
+\end{tabularx}
+\end{minipage}
+
+\subsection{Volumeknop}
+
+\begin{minipage}{\textwidth}
+\textbf{Beginsituatie}
+\begin{itemize}
+	\item \stroom
+	\item \audio
+	\item \aan
+	\item \vol
+\end{itemize}
+
+\medskip
+
+\begin{tabularx}{\textwidth}{p{0.5\textwidth}p{0.3\textwidth}>{\raggedleft\arraybackslash}X}
+\toprule
+\textbf{Actie} & \textbf{Resultaat} & \textbf{Check}\\
+\midrule
+Houd de stylus op een van de toetsen &
+Er klinkt geluid &
+\cb\\
+
+Draai de volumeknop tegen de klok in &
+Het geluid word zachter &
+\cb\\
+
+Draai de volumeknop met de klok mee &
+Het geluid word harder &
+\cb\\
+\bottomrule
+\end{tabularx}
+\end{minipage}
+
+\subsection{Aan/uit knop}
+
+\begin{minipage}{\textwidth}
+\textbf{Beginsituatie}
+\begin{itemize}
+	\item \stroom
+	\item \audio
+	\item \vol
+	\item De aan/uit knop staat op UIT
+\end{itemize}
+
+\medskip
+
+\begin{tabularx}{\textwidth}{p{0.5\textwidth}p{0.3\textwidth}>{\raggedleft\arraybackslash}X}
+\toprule
+\textbf{Actie} & \textbf{Resultaat} & \textbf{Check}\\
+\midrule
+Houd de stylus op een van de toetsen &
+Er klinkt geen geluid &
+\cb\\
+
+Zet de aan/uit knop op AAN &
+Er gebeurt niks &
+\cb\\
+
+Houd de stylus op een van de toetsen &
+Er klinkt geluid &
+\cb\\
+\bottomrule
+\end{tabularx}
+\end{minipage}
+
+\subsection{Draaiknoppen van de digitale synthesizer}
+
+\subsubsection{Draaiknop attacktijd}
+
+\begin{minipage}{\textwidth}
+\textbf{Beginsituatie}
+\begin{itemize}
+	\item \stroom
+	\item \audio
+	\item \aan
+	\item \vol
+	\item De `mix' draaiknop staat volledig naar rechts gedraaid
+	\item De `attack' draaiknop staat volledig naar links gedraaid
+\end{itemize}
+
+\medskip
+
+\begin{tabularx}{\textwidth}{p{0.5\textwidth}p{0.3\textwidth}>{\raggedleft\arraybackslash}X}
+\toprule
+\textbf{Actie} & \textbf{Resultaat} & \textbf{Check}\\
+\midrule
+Tik met de stylus een toets aan &
+Het geluid begint abrupt zodra de stylus contact met de toets maakt &
+\cb\\
+
+Draai de `attack' knop volledig naar rechts &
+Er gebeurt niks &
+\cb\\
+
+Tik met de stylus een toets aan &
+Het geluid neemt geleidelijk toe wanneer de stylus contact meer met de toets maakt &
+\cb\\
+\bottomrule
+\end{tabularx}
+\end{minipage}
+
+\subsubsection{Draaiknop releasetijd}
+
+\begin{minipage}{\textwidth}
+\textbf{Beginsituatie}
+\begin{itemize}
+	\item \stroom
+	\item \audio
+	\item \aan
+	\item \vol
+	\item De `mix' draaiknop staat volledig naar rechts gedraaid
+	\item De `release' draaiknop staat volledig naar links gedraaid
+\end{itemize}
+
+\medskip
+
+\begin{tabularx}{\textwidth}{p{0.5\textwidth}p{0.3\textwidth}>{\raggedleft\arraybackslash}X}
+\toprule
+\textbf{Actie} & \textbf{Resultaat} & \textbf{Check}\\
+\midrule
+Tik met de stylus een toets aan &
+Het geluid stopt abrupt zodra de stylus geen contact meer met de toets maakt &
+\cb\\
+
+Draai de `release' knop volledig naar rechts &
+Er gebeurt niks &
+\cb\\
+
+Tik met de stylus een toets aan &
+Het geluid loopt geleidelijk af zodra de stylus geen contact meer met de toets
+maakt &
+\cb\\
+\bottomrule
+\end{tabularx}
+\end{minipage}
+
+\subsubsection{Draaiknop golfvorm}
+
+\begin{minipage}{\textwidth}
+\textbf{Beginsituatie}
+\begin{itemize}
+	\item \stroom
+	\item \audio
+	\item \aan
+	\item \vol
+	\item De `mix' draaiknop staat volledig naar rechts gedraaid
+	\item De `wave' draaiknop staat volledig naar links gedraaid
+\end{itemize}
+
+\medskip
+
+\begin{tabularx}{\textwidth}{p{0.5\textwidth}p{0.3\textwidth}>{\raggedleft\arraybackslash}X}
+\toprule
+\textbf{Actie} & \textbf{Resultaat} & \textbf{Check}\\
+\midrule
+Blijf de stylus op een van de toetsen houden &
+Er klinkt een toon met een sinus-golfvorm &
+\cb\\
+
+Draai de `wave' knop een kwartslag naar rechts zodat deze nu op de driehoeksgolf
+staat &
+Het geluid verandert van een sinus naar een driehoeksgolf &
+\cb\\
+
+Draai de `wave' knop een kwartslag naar rechts zodat deze nu op de zaagtandgolf
+staat &
+Het geluid verandert van een driehoeksgolf naar een zaagtandgolf &
+\cb\\
+
+Draai de `wave' knop een kwartslag naar rechts zodat deze nu op de blokgolf staat &
+Het geluid verandert van een zaagtandgolf naar een blokgolf &
+\cb\\
+\bottomrule
+\end{tabularx}
+\end{minipage}
+
+\subsection{Stemmen individuele toetsen}
+
+\begin{minipage}{\textwidth}
+\textbf{Beginsituatie}
+\begin{itemize}
+	\item \stroom
+	\item \audio
+	\item \aan
+	\item \vol
+	\item De achterkant van de printplaat is blootgesteld, zodat de instelpotmeters
+		zichtbaar zijn
+	\item De `mix' draaiknop staat volledig naar links gedraaid
+\end{itemize}
+
+\medskip
+
+\begin{tabularx}{\textwidth}{p{0.5\textwidth}p{0.3\textwidth}>{\raggedleft\arraybackslash}X}
+\toprule
+\textbf{Actie} & \textbf{Resultaat} & \textbf{Check}\\
+\midrule
+Klem een krokodillenklem op het testpunt gelabeld op de printplaat &
+Er gebeurt niks &
+\cb\\
+
+Raak met de andere kant van de krokodillenklem een van de toetsen aan &
+Er klinkt een toon &
+\cb\\
+
+Draai de instelpotmeter in de buurt van het contactpunt op de printplaat &
+De toonhoogte varieert een beetje &
+\cb\\
+\bottomrule
+\end{tabularx}
+\end{minipage}
+
+\subsection{Interne versterker}
+
+\begin{minipage}{\textwidth}
+\textbf{Beginsituatie}
+\begin{itemize}
+	\item \stroom
+	\item \audio
+	\item \aan
+	\item De volumeknop staat volledig naar links gedraaid
+\end{itemize}
+
+\medskip
+
+\begin{tabularx}{\textwidth}{p{0.5\textwidth}p{0.3\textwidth}>{\raggedleft\arraybackslash}X}
+\toprule
+\textbf{Actie} & \textbf{Resultaat} & \textbf{Check}\\
+\midrule
+Blijf de stylus op een van de toetsen houden &
+Er is geen geluid &
+\cb\\
+
+Draai de volumeknop langzaam volledig naar rechts &
+Het geluid wordt langzaam luider, en het uitgangssignaal is sterk genoeg om
+fatsoenlijk volume te cre\"eren uit het uitvoerapparaat &
+\cb\\
+\bottomrule
+\end{tabularx}
+\end{minipage}
+
+\end{document}
+
