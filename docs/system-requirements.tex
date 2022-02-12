@@ -12,6 +12,7 @@
 \usepackage{tabularx}
 \usepackage{booktabs}
 \usepackage{needspace}
+\usepackage{graphicx}
 \usepackage{hyperref}
 % \usepackage[backend=biber,
 % 	bibencoding=utf8,
@@ -30,6 +31,8 @@
 \parindent=0mm
 
 \newcommand{\req}[1]{$^{\text{\ref{req:#1}}}$}
+\newcommand{\up}[1]{$^{\text{#1}}$}
+\newcommand{\sub}[1]{$_{\text{#1}}$}
 
 \begin{document}
 System requirements \hfill \textbf{Loek Le Blansch (2180996)}\\
@@ -44,27 +47,37 @@ stylus bevat een elektrisch contact, die gebruikt wordt om de pianotoetsvormige
 contacten aan te raken. De stylofoon heeft twee ingebouwde synthesizers, die mengbaar
 zijn met behulp van een draaiknop om unieke geluiden te cre\"eren.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics{figs/case-layout-sketch.pdf}
+	\caption{Schets van de layout op de voor- en bovenkant}
+\end{figure}
+
 \section{Projectopdracht}
+
+Hier is het originele verhaal van de opdrachtgever, met toegevoegde nummers om aan te
+tonen hoe bepaalde eisen verwerkt zijn:
 
 ``Ik wil graag één muziekinstrument\req{20keys} die op twee verschillende manieren
 geluid kan produceren\req{engines}, met een Stylofoon en Synthesizer. De Stylofoon
 moet 20 tonen kunnen genereren\req{20keys}. De Synthesizer moet gebaseerd zijn op een
-Arduino\req{engines} en 8 variabele tonen maken\req{wavforms}. De tonen die de
-Synthesizer maakt moeten met draaiknoppen instelbaar zijn op frequentie\req{tuneable}
-en lengte\req{sustain}. Er moet een schakelaar aanwezig zijn om te wisselen tussen
-het afspelen van de Stylofoon en Synthesizer\req{mixfader}. Het geluidsignaal moet
-ook visueel gemaakt worden op een VU-meter\req{vumeter}. Het volume moet ingesteld
-kunnen worden met een draaiknop\req{volknob}. De status van het gehele instrument
-moet visueel weergegeven worden\req{onled}. Het zou mooi zijn als in plaats van een
-schakelaar er een manier is om de geluidssignalen van de Stylofoon en Synthesizer te
-combineren\req{mixfader}.
+Arduino\req{engines} en 8 variabele tonen maken\req{readtone}\up{,}\req{wavform}. De
+tonen die de Synthesizer maakt moeten met draaiknoppen instelbaar zijn op
+frequentie\req{tuneable} en lengte\req{release}. Er moet een schakelaar aanwezig zijn
+om te wisselen tussen het afspelen van de Stylofoon en Synthesizer\req{mixfader}. Het
+geluidsignaal moet ook visueel gemaakt worden op een VU-meter\req{vumeter}. Het
+volume moet ingesteld kunnen worden met een draaiknop\req{volknob}. De status van het
+gehele instrument moet visueel weergegeven worden\req{powerbutton}. Het zou mooi zijn
+als in plaats van een schakelaar er een manier is om de geluidssignalen van de
+Stylofoon en Synthesizer te combineren\req{mixfader}.
 
 De Stylofoon heeft minimaal 20 contactpunten\req{20keys} en is gebaseerd op een 555
 timer\req{555}. De Synthesizer is gebaseerd op een Arduino Uno\req{engines} en heeft
-minimaal 8 druktoetsen\req{wavswitch} en 2 draaiknoppen\req{sustain}\req{tuneable}.
-Verder is er een draaiknop om het volume te regelen\req{volknob}, een
-luidspreker-aansluiting\req{lineout} en een VU-meter\req{vumeter}. Alleen pinnen
-A0-A5 van de Arduino Uno mogen gebruikt worden\req{a05}.''
+minimaal 8 druktoetsen\req{readtone} en 2
+draaiknoppen\req{digsoundtweak}. Verder is er een draaiknop om het
+volume te regelen\req{volknob}, een luidspreker-aansluiting\req{phonesout} en een
+VU-meter\req{vumeter}. Alleen pinnen A0-A5 van de Arduino Uno mogen gebruikt
+worden\req{a05}.''
 
 \section{Technische eisen}
 
@@ -78,29 +91,36 @@ geheel.
 		elektrisch geleidende contacten
 	\item \label{req:mixfader} Een draaiknop of fader die het geluid van de analoge en
 		de digitale synthesizers mixt voordat het signaal versterkt wordt
-	\item \label{req:vumeter} Een VU-meter die visueel de amplitude van het
+	\item \label{req:vumeter} Een 10-segments VU-meter die visueel de amplitude van het
 		uigangssignaal laat zien
 	\item \label{req:volknob} Een volumeknop om het uigangsvolume aan te passen
-	\item \label{req:onled} Een led lampje die toont of de stylofoon aan staat
+	\item \label{req:powerbutton} Een aan-uit knop op de voorkant die toont of de stylofoon
+		aan staat
+	\item \label{req:digsoundtweak} Draaiknoppen om eigenschappen van het geluid dat
+		uit de digitale synthesizer komt aan te passen:
+	\begin{enumerate}
+		\item \label{req:attack} \'E\'en draaiknop om de attacktijd te regelen
+		\item \label{req:release} \'E\'en draaiknop om de releasetijd te regelen
+		\item \label{req:wavform} \'E\'en draaiknop om de golfvorm te mengen of schakelen
+			tussen een sinus-, driehoeks-, zaagtand- en blokgolf.
+	\end{enumerate}
 \subsection{Operationele functies}
 	\item \label{req:tuneable} De individuele tonen van de analoge synthesizer zijn
 		stembaar met behulp van instelpotmeters
 	\item \label{req:engines} Twee synthesizers, een analoge en een digitale die met
 		behulp van een Arduino Uno gemaakt wordt
 	\begin{enumerate}
-		\item \label{req:wavforms} De digitale synthesizer produceert acht verschillende
+		\item \label{req:wavforms} De digitale synthesizer produceert vier verschillende
 			golfvormen
-		\item \label{req:wavswitch} De digitale synthesizer heeft acht drukknoppen om
-			tussen de golfvormen te wisselen
-		\item \label{req:sustain} De digitale synthesizer heeft een draaiknop om de
-			lengte (sustain) van de tonen aan te kunnen passen
+		\item \label{req:readtone} De digitale synthesizer kan de huidige toon die
+			gespeeld word uitlezen door de spanning over de weerstandsladder te meten
 	\end{enumerate}
-	\item \label{req:lineout} De audio uitgang van de stylofoon is op line-level, niet
-		op headphone-level
+	\item \label{req:phonesout} De audio uitgang van de stylofoon wordt intern
+		versterkt zijn om op headphone-level te komen
 \subsection{Ontwerpbeperkingen}
 	\item \label{req:555} De analoge synthesizer is gebaseerd op een 555 timer
 	\item \label{req:a05} Alleen pinnen A0..A5 van de Arduino worden gebruikt
-	\item \label{req:lm3914} Er wordt een LM3914 gebruikt voor de VU-meter
+	\item \label{req:lm3914} Er wordt een LM3914 IC gebruikt voor de VU-meter
 \subsection{Randvoorwaarden}
 	\item Sommige componenten worden voorgeschreven
 	\item Diverse componenten zoals de gaatjesprint, druktoetsen en leds worden door de
@@ -110,26 +130,6 @@ geheel.
 	\item Er worden IC-voetjes gebruikt om de ledbar van de VU-meter, en andere IC's te
 		monteren
 \end{enumerate}
-
-\section{Vragen}
-
-\begin{itemize}
-	\item Moet de uitgang van de stylofoon een preamp hebben, of word de stylofoon
-		aangesloten op een externe versterker?
-	\item In de projectopdracht staat ``\emph{De tonen die de Synthesizer maakt moeten
-		met draaiknoppen instelbaar zijn op frequentie en lengte}''
-	\begin{enumerate}
-		\item Word er hier met `Synthesizer' alleen de Arduino-synthesizer of allebei de
-			interne synthesizers bedoeld?
-		\item Word hier bedoeld dat alle tonen tegelijkertijd hoger, of lager worden, of
-			dat elke toon individueel stembaar is (met behulp van instelpotmeters)?
-	\end{enumerate}
-	\item Moet de VU-meter het geluidssignaal voor of na het door de volumeknop
-		aangepast is weergeven?
-	\item In de projectopdracht staat ``\emph{De Synthesizer (...) [moet] 8 variabele
-		tonen maken}'', word hier bedoeld dat de Arduino maar geluid hoeft te maken voor
-		8 van de 20 toetsen, of dat er 8 unieke golfvormen geproduceerd moeten worden?
-\end{itemize}
 
 \end{document}
 
