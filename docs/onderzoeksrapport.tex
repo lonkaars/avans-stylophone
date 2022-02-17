@@ -25,6 +25,9 @@
 	output-decimal-marker = {,}
 }
 
+\newcommand{\s}{$^{\sharp}$}
+\newcommand{\sub}[1]{$_{\text{#1}}$}
+
 \bigskipamount=7mm
 \medskipamount=4mm
 \parindent=0mm
@@ -34,18 +37,97 @@ Onderzoeksrapport \hfill \textbf{Loek Le Blansch (2180996)}\\
 Project Stylofoon \hfill \today
 \medskip
 
-Deelvragen:
+\tableofcontents
 
-\begin{itemize}
-	\item Hoe configureer je een 555 timer op een manier waarop de spanning of
-		weerstand die de frequentie regelt meetbaar is zonder de frequentie te
-		be\"invloeden, en de frequentie uitrekenbaar is?
-	\item Welke voeding moet gebruikt worden om alle onderdelen te voorzien van genoeg
-		stroom?
-	\item Hoe versterk je een audiosignaal zonder ruis of vervorming te introduceren?
-	\item Hoe moet je een LM3914 toepassen om een VU-display aan te sturen?
-	
-\end{itemize}
+\section{555 Timer configuratie}
+
+\textit{Hoe configureer je een 555 timer op een manier waarop de spanning of
+weerstand die de frequentie regelt meetbaar is zonder de frequentie te be\"invloeden,
+en de frequentie uitrekenbaar is?}
+
+In het ontwerp gaat het keyboard van de noot f3 tot c5. Hier is een tabel met
+nootnamen, absolute frequenties en de invoerspanning die de 555 oscillator nodig
+heeft om die frequentie te produceren:
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{ccc}
+\toprule
+Noot & $f$ [\si{\hertz}] & V\sub{in} [\si{\volt}]\\
+\midrule
+f3   & \num{174.6} & \num{0.0} \\
+f\s3 & \num{185.0} & \num{0.0} \\
+g3   & \num{196.0} & \num{0.0} \\
+g\s3 & \num{207.7} & \num{0.0} \\
+a3   & \num{220.0} & \num{0.0} \\
+a\s3 & \num{233.1} & \num{0.0} \\
+b3   & \num{246.9} & \num{0.0} \\
+c4   & \num{261.6} & \num{0.0} \\
+c\s4 & \num{277.2} & \num{0.0} \\
+d4   & \num{293.7} & \num{0.0} \\
+d\s4 & \num{311.1} & \num{0.0} \\
+e4   & \num{329.6} & \num{0.0} \\
+f4   & \num{349.2} & \num{0.0} \\
+f\s4 & \num{370.0} & \num{0.0} \\
+g4   & \num{392.0} & \num{0.0} \\
+g\s4 & \num{415.3} & \num{0.0} \\
+a4   & \num{440.0} & \num{0.0} \\
+a\s4 & \num{466.2} & \num{0.0} \\
+b4   & \num{493.9} & \num{0.0} \\
+c5   & \num{523.3} & \num{0.0} \\
+\bottomrule
+\end{tabular}
+\caption{Noot-frequentie lookup-table}
+\end{figure}
+
+Uit deze tabel is te zien dat de frequentie tussen \SI{174.6}{\hertz} en
+\SI{523.3}{\hertz} moet kunnen vari\"eren. <hier een stuk over hoe je die spanningen
+berekent ofzo>. Omdat er een weerstandsladder gebruikt word voor het keyboard, moet
+er een manier zijn om te compenseren voor de toleranties van de weerstanden. Hiervoor
+worden instelpotmeters in serie gesoldeerd die de weerstandswaarde kunnen laten
+vari\"eren buiten de tolerantie van elke weerstand.
+
+\section{Spanningen en stromen}
+
+\textit{Welke voedingen kunnen gebruikt worden om alle onderdelen te voorzien van
+genoeg stroom?}
+
+Het hele systeem draait op een voedingsspanning van V\sub{CC} $=$ \SI{5.0}{\volt}.
+Het zou ideaal zijn als de hele stylofoon door \'e\'en USB poort gevoed kan worden.
+Een standaard USB aansluiting levert echter niet meer dan \SI{500}{\milli\ampere},
+dus als alle onderdelen gecombineerd meer dan deze limiet gebruiken moet er een
+andere oplossing voor de voeding gekozen worden. Hier is een overzicht van stromen
+die verbruikt worden door de verschillende onderdelen in de stylofoon:
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{lr}
+\toprule
+Onderdeel & I\sub{in} (max) [\si{\milli\ampere}]\\
+\midrule
+Arduino & \num{50} \\
+Arduino audio uit & \num{20} \\
+LM3914 & \num{0} \\
+VU-display & \num{0} \\
+Versterker digitale synth & \num{0} \\
+Versterker analoge synth & \num{0} \\
+Stroomverlies weerstandladder & \num{0} \\
+Audio-uitvoer & \num{0} \\
+\midrule
+\hfill Totaal: & \num{500} \\
+\bottomrule
+\end{tabular}
+\caption{Overzicht stromen}
+\end{figure}
+
+\section{Versterkers}
+
+\textit{Hoe versterk je een audiosignaal zonder ruis of vervorming te introduceren?}
+
+\section{VU-display}
+
+\textit{Hoe moet je een LM3914 toepassen om een VU-display aan te sturen?}
+
 
 \end{document}
 
