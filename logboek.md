@@ -15,4 +15,5 @@
 |Fri Feb 18 11:25:20 AM CET 2022|01:31:29|onderzoeksverslag (antwoorden)|
 |Sat Feb 19 11:55:21 AM CET 2022|01:21:39|onderzoeksverslag (antwoorden)|
 |Sat Feb 19 12:02:07 PM CET 2022|00:06:06|elektrisch schema (tests)|
+|Sat Feb 19 12:19:30 PM CET 2022|00:16:03|blokschema|
 
