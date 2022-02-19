@@ -41,14 +41,41 @@ Project Stylofoon \hfill \today
 
 \section{Veelgebruikte eenheden}
 
-\textit{Welke eenheden worden er gebruikt om stromen en spanningen in audio-circuits
-te meten?}
+% \textit{Welke eenheden worden er gebruikt om stromen en spanningen in
+% audio-circuits te meten?}
+
+\textbf{V\sub{PP}} (voltage peak to peak)
+Dit is de afstand tussen de onderste en bovenste spanningsgrens van een signaal
+
+\textbf{V\sub{RMS}} (root mean square voltage)
+Dit is de gelijkspanningequivalent van een wisselspanning. Voor een AC signaal
+met een evenwichtsstand om \SI{0}{\volt} is V\sub{RMS} als volgt te berekenen:
+\[ \text{V}_{\text{RMS}} = \frac{\text{V}_{\text{AC}}}{\sqrt{2}} \]
+
+\textbf{dB} (decibel)
+Decibel is de eenheid van relatief geluidsvolume. De schaalverdeling van decibel is
+logaritmisch, om de manier waarop mensen volume waarnemen na te bootsen. Decibel is
+een relatieve eenheid, en wordt daarom vaak gecombineerd met andere eenheden zoals
+dBv (decibel voltage) of dB SPL (decibel sound pressure level) om absolute waardes
+aan te geven.
+
+\textbf{dBv} (decibel volt)
+dBv is V\sub{RMS} relatief tot een spanning die \SI{1}{\milli\watt} zou verspillen
+door een lading met een impedantie van \SI{600}{\ohm}. 0 dBv is daarom gelijk aan een
+spanning van $\sqrt{600 * 1 * 10^{-3}} \approx \SI{0.77}{\volt}$.
+
+\textbf{W} (watt)
+Omdat voor de amplitude van een signaal de spanning, en daarmee ook de stroom
+verandert, is het gebruikelijk om op de uitgang van een versterker een vermogen te
+zien. Er is alleen geen `normaal' vermogen, omdat de gevoeligheid van
+uitvoerapparaten ook enorm kan vari\"eren. De IEM's die ik thuis gebruik zijn erg
+gevoelig, en hebben een gevoeligheid van 112 dB SPL mW$^{-1}$.
 
 \section{555 Timer configuratie}
 
-\textit{Hoe configureer je een 555 timer op een manier waarop de spanning of
-weerstand die de frequentie regelt meetbaar is zonder de frequentie te be\"invloeden,
-en de frequentie uitrekenbaar is?}
+% \textit{Hoe configureer je een 555 timer op een manier waarop de spanning of
+% weerstand die de frequentie regelt meetbaar is zonder de frequentie te
+% be\"invloeden, en de frequentie uitrekenbaar is?}
 
 In het ontwerp gaat het keyboard van de noot f3 tot c5. Hier is een tabel met
 nootnamen, absolute frequenties en de invoerspanning die de 555 oscillator nodig
@@ -111,12 +138,12 @@ andere oplossing voor de voeding gekozen worden.
 \toprule
 Onderdeel \\
 \midrule
-Arduino (audio uit)                   & V\sub{PP} & \num{0} & \si{\volt}\\
-										                  & I\sub{PP} & \num{0} & \si{\milli\ampere}\\
-555 (audio uit)                       & V\sub{PP} & \num{0} & \si{\volt}\\
-                                      & I\sub{PP} & \num{0} & \si{\milli\ampere}\\
-Functiegenerator (fatsoenlijk volume) & V\sub{PP} & \num{0} & \si{\volt}\\
-																			& I\sub{PP} & \num{0} & \si{\milli\ampere}\\
+Arduino (audio uit)                   & V\sub{RMS} & \num{0} & \si{\volt}\\
+										                  & I\sub{RMS} & \num{0} & \si{\milli\ampere}\\
+555 (audio uit)                       & V\sub{RMS} & \num{0} & \si{\volt}\\
+                                      & I\sub{RMS} & \num{0} & \si{\milli\ampere}\\
+Functiegenerator (fatsoenlijk volume) & V\sub{RMS} & \num{0} & \si{\volt}\\
+																			& I\sub{RMS} & \num{0} & \si{\milli\ampere}\\
 \bottomrule
 \end{tabular}
 \caption{Gemeten stromen en spanningen}
