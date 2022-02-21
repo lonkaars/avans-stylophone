@@ -1,0 +1,3 @@
+[submodule "software/lib/the_synth"]
+	path = software/lib/the_synth
+	url = https://github.com/dzlonline/the_synth
