@@ -6,6 +6,9 @@ dit is een klaagmuur
 		de header die je importeert
 	- code in header bestanden inplaats van een .h bestand voor de linker en een
 		.ino bestand voor de compiler
+	- geen mogelijkheid om gebruikt te worden in combinatie met de eis dat alleen
+		pinnen a0 t/m a5 gebruikt worden, omdat de library alleen op pin d3 en d11
+		werken
 - in de projectopdracht staat dat de audio uitgang 'fatsoenlijk volume' moet
 	produceren, maar nergens worden specificaties gegeven van het uitvoerapparaat
 	dat gebruikt wordt tijdens de assessment. dit is vervelend want speakers en
