@@ -123,6 +123,36 @@ er een manier zijn om te compenseren voor de toleranties van de weerstanden. Hie
 worden instelpotmeters in serie gesoldeerd die de weerstandswaarde kunnen laten
 vari\"eren buiten de tolerantie van elke weerstand.
 
+Metingen frequentie bereken formule:
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{ccc}
+\toprule
+$f$ [\si{\hertz}] & R [\si{\kilo\ohm}]\\
+\midrule
+\num{373} & \num{218.8} \\
+\num{820} & \num{99.13} \\
+\num{1468} & \num{54.83} \\
+\bottomrule
+\end{tabular}
+\caption{Variabele weerstand bij condensator van \SI{10.4}{\nano\farad}}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{ccc}
+\toprule
+$f$ [\si{\hertz}] & Q [\si{\nano\farad}]\\
+\midrule
+\num{184} & \num{21.0} \\
+\num{373} & \num{10.4} \\
+\num{676} & \num{5.54} \\
+\bottomrule
+\end{tabular}
+\caption{Variabele condensator bij weerstand van \SI{218.8}{\kilo\ohm}}
+\end{figure}
+
 \section{Spanningen en stromen}
 
 \textit{Welke voedingen kunnen gebruikt worden om alle onderdelen te voorzien van
@@ -182,6 +212,7 @@ Onderdeel & I\sub{max} [\si{\milli\ampere}]\\
 \midrule
 Arduino & \num{50} \\
 Arduino audio uit & \num{20} \\
+555 & \num{2.5} \\
 LM3914 & \num{0} \\
 VU-display & \num{0} \\
 Versterker digitale synth & \num{0} \\
