@@ -1,4 +1,6 @@
 copyright/
+datasheets/*.pdf
+**/*backup*
 
 # latex files
 *.aux

@@ -13,6 +13,7 @@
 \usepackage{booktabs}
 \usepackage{needspace}
 \usepackage{hyperref}
+\usepackage{graphicx}
 % \usepackage[backend=biber,
 % 	bibencoding=utf8,
 % 	style=apa
@@ -61,7 +62,7 @@ aan te geven.
 
 \textbf{dBv} (decibel volt)
 dBv is V\sub{RMS} relatief tot een spanning die \SI{1}{\milli\watt} zou verspillen
-door een lading met een impedantie van \SI{600}{\ohm}. 0 dBv is daarom gelijk aan een
+door een lading met een impedantie van \SI{600}{\ohm}. 0 dBv is gelijk aan een
 spanning van $\sqrt{600 * 1 * 10^{-3}} \approx \SI{0.77}{\volt}$.
 
 \textbf{W} (watt)
@@ -117,46 +118,45 @@ weerstandwaarde van \SI{218.8}{\kilo\ohm}, en een condensator van
 \SI{10.4}{\nano\farad}.
 
 Uit deze tabel is te zien dat de frequentie tussen \SI{174.6}{\hertz} en
-\SI{523.3}{\hertz} moet kunnen vari\"eren. <hier een stuk over hoe je die spanningen
-berekent ofzo>. Omdat er een weerstandsladder gebruikt word voor het keyboard, moet
-er een manier zijn om te compenseren voor de toleranties van de weerstanden. Hiervoor
-worden instelpotmeters in serie gesoldeerd die de weerstandswaarde kunnen laten
-vari\"eren buiten de tolerantie van elke weerstand.
+\SI{523.3}{\hertz} moet kunnen vari\"eren. Omdat er een weerstandsladder gebruikt
+word voor het keyboard, moet er een manier zijn om te compenseren voor de toleranties
+van de weerstanden. Hiervoor worden instelpotmeters in serie gesoldeerd die de
+weerstandswaarde kunnen laten vari\"eren buiten de tolerantie van elke weerstand.
 
-Metingen frequentie bereken formule:
-
-\begin{figure}[H]
-\centering
-\begin{tabular}{ccc}
-\toprule
-$f$ [\si{\hertz}] & R [\si{\kilo\ohm}]\\
-\midrule
-\num{373} & \num{218.8} \\
-\num{820} & \num{99.13} \\
-\num{1468} & \num{54.83} \\
-\bottomrule
-\end{tabular}
-\caption{Variabele weerstand bij condensator van \SI{10.4}{\nano\farad}}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\begin{tabular}{ccc}
-\toprule
-$f$ [\si{\hertz}] & Q [\si{\nano\farad}]\\
-\midrule
-\num{184} & \num{21.0} \\
-\num{373} & \num{10.4} \\
-\num{676} & \num{5.54} \\
-\bottomrule
-\end{tabular}
-\caption{Variabele condensator bij weerstand van \SI{218.8}{\kilo\ohm}}
-\end{figure}
+% Metingen frequentie bereken formule:
+% 
+% \begin{figure}[H]
+% \centering
+% \begin{tabular}{ccc}
+% \toprule
+% $f$ [\si{\hertz}] & R [\si{\kilo\ohm}]\\
+% \midrule
+% \num{373} & \num{218.8} \\
+% \num{820} & \num{99.13} \\
+% \num{1468} & \num{54.83} \\
+% \bottomrule
+% \end{tabular}
+% \caption{Variabele weerstand bij condensator van \SI{10.4}{\nano\farad}}
+% \end{figure}
+% 
+% \begin{figure}[H]
+% \centering
+% \begin{tabular}{ccc}
+% \toprule
+% $f$ [\si{\hertz}] & Q [\si{\nano\farad}]\\
+% \midrule
+% \num{184} & \num{21.0} \\
+% \num{373} & \num{10.4} \\
+% \num{676} & \num{5.54} \\
+% \bottomrule
+% \end{tabular}
+% \caption{Variabele condensator bij weerstand van \SI{218.8}{\kilo\ohm}}
+% \end{figure}
 
 \section{Spanningen en stromen}
 
-\textit{Welke voedingen kunnen gebruikt worden om alle onderdelen te voorzien van
-genoeg stroom?}
+% \textit{Welke voedingen kunnen gebruikt worden om alle onderdelen te voorzien van
+% genoeg stroom?}
 
 Het hele systeem draait op een voedingsspanning van V\sub{CC} $=$ \SI{5.0}{\volt}.
 Het zou ideaal zijn als de hele stylofoon door \'e\'en USB poort gevoed kan worden.
@@ -164,24 +164,24 @@ Een standaard USB aansluiting levert echter niet meer dan \SI{500}{\milli\ampere
 dus als alle onderdelen gecombineerd meer dan deze limiet gebruiken moet er een
 andere oplossing voor de voeding gekozen worden.
 
-\subsection{Metingen}
-
-\begin{figure}[H]
-\centering
-\begin{tabular}{lccl}
-\toprule
-Onderdeel \\
-\midrule
-Arduino (audio uit)                   & V\sub{RMS} & \num{0} & \si{\volt}\\
-										                  & I\sub{RMS} & \num{0} & \si{\milli\ampere}\\
-555 (audio uit)                       & V\sub{RMS} & \num{0} & \si{\volt}\\
-                                      & I\sub{RMS} & \num{0} & \si{\milli\ampere}\\
-Functiegenerator (fatsoenlijk volume) & V\sub{RMS} & \num{0} & \si{\volt}\\
-																			& I\sub{RMS} & \num{0} & \si{\milli\ampere}\\
-\bottomrule
-\end{tabular}
-\caption{Gemeten stromen en spanningen}
-\end{figure}
+% \subsection{Metingen}
+% 
+% \begin{figure}[H]
+% \centering
+% \begin{tabular}{lccl}
+% \toprule
+% Onderdeel \\
+% \midrule
+% Arduino (audio uit)                   & V\sub{RMS} & \num{0} & \si{\volt}\\
+% 										                  & I\sub{RMS} & \num{0} & \si{\milli\ampere}\\
+% 555 (audio uit)                       & V\sub{RMS} & \num{0} & \si{\volt}\\
+%                                       & I\sub{RMS} & \num{0} & \si{\milli\ampere}\\
+% Functiegenerator (fatsoenlijk volume) & V\sub{RMS} & \num{0} & \si{\volt}\\
+% 																			& I\sub{RMS} & \num{0} & \si{\milli\ampere}\\
+% \bottomrule
+% \end{tabular}
+% \caption{Gemeten stromen en spanningen}
+% \end{figure}
 
 \subsection{Uitvoer}
 
@@ -190,7 +190,7 @@ produceren. Op internet heb ik gevonden dat een gemiddelde koptelefoonaansluitin
 een smartphone ongeveer \SI{30}{\milli\watt} bij een koptelefoon met een impedantie
 van \SI{32}{\ohm} levert. Het volume van een audiosignaal is lastig te achterhalen
 omdat het van veel verschillende factoren af hangt zoals de spanning, vermogen,
-impedantie, en de gevoeligheid van een uitvoerapparaat.
+impedantie, en de gevoeligheid van het uitvoerapparaat.
 
 Genoeg vermogen leveren voor oordopjes zal niet heel lastig zijn, maar omdat de
 gevoeligheid van speakers heel erg vari\"eert is het lastig om een exacte waarde te
@@ -212,15 +212,13 @@ Onderdeel & I\sub{max} [\si{\milli\ampere}]\\
 \midrule
 Arduino & \num{50} \\
 Arduino audio uit & \num{20} \\
-555 & \num{2.5} \\
-LM3914 & \num{0} \\
-VU-display & \num{0} \\
-Versterker digitale synth & \num{0} \\
-Versterker analoge synth & \num{0} \\
-Stroomverlies weerstandladder & \num{0} \\
+555 & \num{3} \\
+LM3914 & \num{13} \\
+VU-display & \num{200} \\
+LM386 & \num{4} \\
 Audio-uitvoer & \num{31} \\
 \midrule
-\hfill Totaal: & \num{500} \\
+\hfill Totaal: & \num{321} \\
 \bottomrule
 \end{tabular}
 \caption{Overzicht stromen}
@@ -228,14 +226,29 @@ Audio-uitvoer & \num{31} \\
 
 \section{Versterkers}
 
-\textit{Hoe versterk je een audiosignaal zonder ruis of vervorming te introduceren?}
+% \textit{Hoe versterk je een audiosignaal zonder ruis of vervorming te
+% introduceren?}
 
-(misschien een lm386 gebruiken als versterker als die er is in het techlab)
+Om het audiosignaal hoorbaar te maken kunnen niet direct speakers aangesloten worden
+op de interne synthesizers, maar deze moeten eerst versterkt worden. Audiosignalen
+kunnen op verschillende manieren versterkt worden, maar voor dit project heb ik
+gekozen om een LM386 te gebruiken als versterker. In de datasheet van deze IC staat
+een voorbeeldopstelling:
 
-\section{VU-display}
+\begin{figure}[H]
+\centering
+\includegraphics[
+	clip,
+	trim=70mm 130mm 70mm 100mm,
+	page=8
+]{../datasheets/lm386.pdf}
+\caption{Voorbeeldopstelling LM386}
+\end{figure}
 
-\textit{Hoe moet je een LM3914 toepassen om een VU-display aan te sturen?}
-
+In deze voorbeeldopstelling komt de audio binnen via de V\sub{IN} ingang. Deze ingang
+staat in serie met een potmeter zodat het volume geregeld kan worden. De LM386 heeft
+een standaardgain van 20, maar deze kan verhoogd worden door pin 1 en 8 met een
+weerstand en condensator te verbinden. Hierdoor zal het geluid harder worden.
 
 \end{document}
 
