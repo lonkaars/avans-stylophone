@@ -1,6 +1,7 @@
 copyright/
 datasheets/*.pdf
 **/*backup*
+#auto_saved_files#/
 
 # latex files
 *.aux
