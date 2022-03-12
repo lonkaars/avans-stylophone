@@ -38,4 +38,5 @@
 |Fri Mar 11 12:13:38 PM CET 2022|02:30:00|lab tests|
 |Fri Mar 11 02:27:19 PM CET 2022|00:40:00|elektrisch schema|
 |Sat Mar 12 03:22:40 PM CET 2022|03:12:21|elektrisch schema|
+|Sat Mar 12 06:37:00 PM CET 2022|00:30:00|qr code toevoegen aan pcb|
 
