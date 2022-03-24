@@ -5,6 +5,13 @@
   )
 
   (paper "A4")
+  (title_block
+    (title "Stylofoon PCB")
+    (date "2022-03-12")
+    (rev "1")
+    (company "Loek Le Blansch")
+  )
+
   (layers
     (0 "F.Cu" signal)
     (31 "B.Cu" signal)

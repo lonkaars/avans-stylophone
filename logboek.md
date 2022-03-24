@@ -39,4 +39,5 @@
 |Fri Mar 11 02:27:19 PM CET 2022|00:40:00|elektrisch schema|
 |Sat Mar 12 03:22:40 PM CET 2022|03:12:21|elektrisch schema|
 |Sat Mar 12 06:37:00 PM CET 2022|00:30:00|qr code toevoegen aan pcb|
+|Thu Mar 24 01:04:48 PM CET 2022|03:33:55|solderen / in mekaar zetten|
 

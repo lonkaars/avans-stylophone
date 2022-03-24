@@ -62,22 +62,21 @@ tonen hoe bepaalde eisen verwerkt zijn:
 geluid kan produceren\req{engines}, met een Stylofoon en Synthesizer. De Stylofoon
 moet 20 tonen kunnen genereren\req{20keys}. De Synthesizer moet gebaseerd zijn op een
 Arduino\req{engines} en 8 variabele tonen maken\req{readtone}\up{,}\req{wavform}. De
-tonen die de Synthesizer maakt moeten met draaiknoppen instelbaar zijn op
-frequentie\req{tuneable} en lengte\req{release}. Er moet een schakelaar aanwezig zijn
-om te wisselen tussen het afspelen van de Stylofoon en Synthesizer\req{mixfader}. Het
-geluidsignaal moet ook visueel gemaakt worden op een VU-meter\req{vumeter}. Het
-volume moet ingesteld kunnen worden met een draaiknop\req{volknob}. De status van het
-gehele instrument moet visueel weergegeven worden\req{powerbutton}. Het zou mooi zijn
-als in plaats van een schakelaar er een manier is om de geluidssignalen van de
-Stylofoon en Synthesizer te combineren\req{mixfader}.
+tonen die de Synthesizer maakt moeten met draaiknoppen instelbaar zijn op frequentie
+en lengte\req{release}. Er moet een schakelaar aanwezig zijn om te wisselen tussen
+het afspelen van de Stylofoon en Synthesizer\req{mixfader}. Het geluidsignaal moet
+ook visueel gemaakt worden op een VU-meter\req{vumeter}. Het volume moet ingesteld
+kunnen worden met een draaiknop\req{volknob}. De status van het gehele instrument
+moet visueel weergegeven worden\req{powerbutton}. Het zou mooi zijn als in plaats van
+een schakelaar er een manier is om de geluidssignalen van de Stylofoon en Synthesizer
+te combineren\req{mixfader}.
 
 De Stylofoon heeft minimaal 20 contactpunten\req{20keys} en is gebaseerd op een 555
 timer\req{555}. De Synthesizer is gebaseerd op een Arduino Uno\req{engines} en heeft
-minimaal 8 druktoetsen\req{readtone} en 2
-draaiknoppen\req{digsoundtweak}. Verder is er een draaiknop om het
-volume te regelen\req{volknob}, een luidspreker-aansluiting\req{phonesout} en een
-VU-meter\req{vumeter}. Alleen pinnen A0-A5 van de Arduino Uno mogen gebruikt
-worden\req{a05}.''
+minimaal 8 druktoetsen\req{readtone} en 2 draaiknoppen\req{digsoundtweak}. Verder is
+er een draaiknop om het volume te regelen\req{volknob}, een
+luidspreker-aansluiting\req{phonesout} en een VU-meter\req{vumeter}. Alleen pinnen
+A0-A5 van de Arduino Uno mogen gebruikt worden\req{a05}.''
 
 \section{Technische eisen}
 
@@ -105,8 +104,6 @@ geheel.
 			tussen een sinus-, driehoeks-, zaagtand- en blokgolf.
 	\end{enumerate}
 \subsection{Operationele functies}
-	\item \label{req:tuneable} De individuele tonen van de analoge synthesizer zijn
-		stembaar met behulp van instelpotmeters
 	\item \label{req:engines} Twee synthesizers, een analoge en een digitale die met
 		behulp van een Arduino Uno gemaakt wordt
 	\begin{enumerate}
