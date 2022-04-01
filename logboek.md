@@ -40,4 +40,7 @@
 |Sat Mar 12 03:22:40 PM CET 2022|03:12:21|elektrisch schema|
 |Sat Mar 12 06:37:00 PM CET 2022|00:30:00|qr code toevoegen aan pcb|
 |Thu Mar 24 01:04:48 PM CET 2022|03:33:55|solderen / in mekaar zetten|
+|Fri Mar 25 02:19:34 PM CET 2022|04:12:41|solderen / in mekaar zetten|
+|Tue Mar 29 03:26:20 PM CET 2022|01:02:15|debuggen|
+|Fri Apr  1 11:17:41 AM CEST 2022|02:03:32|debuggen en arduino software schrijven|
 
