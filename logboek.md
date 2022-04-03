@@ -44,4 +44,5 @@
 |Tue Mar 29 03:26:20 PM CET 2022|01:02:15|debuggen|
 |Fri Apr  1 11:17:41 AM CEST 2022|02:03:32|debuggen en arduino software schrijven|
 |Sat Apr  2 11:28:15 AM CEST 2022|00:34:51|software opschonen en ontwerpdocument maken|
+|Sun Apr  3 06:56:56 PM CEST 2022|00:58:24|ontwerpdocument afmaken|
 
