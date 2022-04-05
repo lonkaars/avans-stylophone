@@ -46,4 +46,5 @@
 |Sat Apr  2 11:28:15 AM CEST 2022|00:34:51|software opschonen en ontwerpdocument maken|
 |Sun Apr  3 06:56:56 PM CEST 2022|00:58:24|ontwerpdocument afmaken|
 |Mon Apr  4 12:58:41 PM CEST 2022|00:37:00|begin presentatie schets maken|
+|Tue Apr  5 06:27:48 PM CEST 2022|01:28:03|presentatie af|
 
