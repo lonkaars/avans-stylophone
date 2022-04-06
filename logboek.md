@@ -1,5 +1,9 @@
 # logboek
 
+[link](https://docs.google.com/spreadsheets/d/1zp4gL5jmDVSvwYsKtnBXNt1g1LsAT9NwkqCPIc2atBc/edit?usp=sharing)
+(ods ondersteunt geen tijdsverloop data format, alleen absolute tijd en ook
+geen datum met tijd)
+
 |datum|werktijd|onderdeel|
 |-|-|-|
 |Mon Feb  7 01:50:59 PM CET 2022|01:38:23|system requirements|
