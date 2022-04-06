@@ -47,4 +47,5 @@
 |Sun Apr  3 06:56:56 PM CEST 2022|00:58:24|ontwerpdocument afmaken|
 |Mon Apr  4 12:58:41 PM CEST 2022|00:37:00|begin presentatie schets maken|
 |Tue Apr  5 06:27:48 PM CEST 2022|01:28:03|presentatie af|
+|Wed Apr  6 11:36:36 AM CEST 2022|00:11:13|documenten doorkijken en corrigeren|
 
