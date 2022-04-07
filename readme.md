@@ -1,9 +1,11 @@
 # avans-stylofoon
 
+![](stylofoon.jpg)
+
 (dutch)
 
 bronnen voor project stylofoon van technische informatica bij hogeschool avans
-in den bosch. hier komen kicad bestanden voor de elektrische schema's en
+in den bosch. hier staan alle kicad bestanden voor de elektrische schema's en
 hardwareontwerpen, en alle documentatie die ingeleverd moet worden.
 
 ## advies voor andere studenten die dit project ook moeten doen
